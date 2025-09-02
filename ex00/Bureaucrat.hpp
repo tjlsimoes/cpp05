@@ -18,7 +18,7 @@ class	Bureaucrat
 		class GradeTooHighException : public std::exception 
 		{
 			public:
-				const char	*what() const noexcept override
+				const char	*what()
 				{
 					return ("Invalid grade: too high");
 				}
@@ -26,7 +26,7 @@ class	Bureaucrat
 		class GradeTooLowException : public std::exception 
 		{
 			public:
-				const char	*what() const noexcept override
+				const char	*what()
 				{
 					return ("Invalid grade: too low");
 				}

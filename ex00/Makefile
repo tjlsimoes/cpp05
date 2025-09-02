@@ -6,7 +6,7 @@
 #    By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 10:42:39 by tjorge-l          #+#    #+#              #
-#    Updated: 2025/09/02 14:21:10 by tjorge-l         ###   ########.fr        #
+#    Updated: 2025/09/02 16:09:26 by tjorge-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,10 @@ OBJS = $(SRCS:%.cpp=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CCXX) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CCXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(CCXX) $(CFLAGS) -c $< -o $@
+	$(CCXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
@@ -44,9 +44,9 @@ re: fclean all
 run: $(NAME)
 	valgrind $(VFLAGS) ./$(NAME)
 
-debug: CFLAGS = -g -Wall -Wextra -Werror
+debug: CXXFLAGS = -g -Wall -Wextra -Werror
 debug: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 rdebug: debug
 	valgrind $(VFLAGS) ./$(NAME)
