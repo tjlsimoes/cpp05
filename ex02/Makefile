@@ -1,0 +1,56 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/06/10 10:42:39 by tjorge-l          #+#    #+#              #
+#    Updated: 2025/09/02 19:03:27 by tjorge-l         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
+NAME = form
+
+CCXX = c++
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
+RM = rm -rf
+
+DEBUG_FLAGS = -g
+VFLAGS = -s --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes
+
+
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
+	RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+
+OBJS = $(SRCS:%.cpp=%.o)
+
+
+all: $(NAME)
+
+$(NAME): $(OBJS) $(LIBFT)
+	$(CCXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CCXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+run: $(NAME)
+	valgrind $(VFLAGS) ./$(NAME)
+
+debug: CXXFLAGS = -g -Wall -Wextra -Werror
+debug: $(OBJS)
+	$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+rdebug: debug
+	valgrind $(VFLAGS) ./$(NAME)
+
+.PHONY: all clean fclean re
