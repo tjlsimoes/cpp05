@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:50:46 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/29 11:12:38 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:40:57 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,27 @@ std::string	Intern::getFormName(std::string user_input) const
 AForm	*Intern::makeForm(std::string form, std::string target) const
 {
 	std::string form_name = getFormName(form).c_str();
-	if (form_name == "PresidentialPardonForm")
-		return (new PresidentialPardonForm(target));
-	else if (form_name == "RobotomyRequestForm")
-		return (new RobotomyRequestForm(target));
-	else if (form_name == "ShrubberyCreationForm")
-		return (new ShrubberyCreationForm(target));
-	else
+	std::string forms[3] = {
+		"PresidentialPardonForm",
+		"RobotomyRequestForm",
+		"ShrubberyCreationForm"
+	};
+	int i = -1;
+	while (++i < 3)
 	{
-		std::cerr << "Unrecognized Form: " << form_name << std::endl; 
-		return (NULL);
+		if (forms[i] == form_name)
+			break ;
+	}
+	switch (i)
+	{
+		case 0:
+			return (new PresidentialPardonForm(target));
+		case 1:
+			return (new RobotomyRequestForm(target));
+		case 2:
+			return (new ShrubberyCreationForm(target));
+		default:
+			std::cerr << "Unrecognized Form: " << form_name << std::endl; 
+			return (NULL);
 	}
 }
