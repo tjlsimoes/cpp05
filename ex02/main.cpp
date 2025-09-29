@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:51:49 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:51:50 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 11:02:03 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ int	main(void)
 	std::cout << *pres_form;
 	std::cout << *rob_form;
 	std::cout << *shr_form;
+
+	// Testing Orthodox canonical form
+	// RobotomyRequestForm		*a_new_pres_form = new RobotomyRequestForm();
+	// RobotomyRequestForm		*new_pres_form = new RobotomyRequestForm(*rob_form);
+	// delete pres_form;
+	// std::cout << *a_new_pres_form;
+	// std::cout << *new_pres_form;
+	// delete a_new_pres_form;
+	// delete new_pres_form;
 
 	// Trying to execute unsigned form
 	try
@@ -50,8 +59,8 @@ int	main(void)
 	}
 
 	Bureaucrat	*bur_c = new Bureaucrat("D", 145);
-	// Bureaucrat	*bur_d = new Bureaucrat("E", 150);
-	// Bureaucrat	*bur_e = new Bureaucrat("F", 150);
+	Bureaucrat	*bur_d = new Bureaucrat("E", 150);
+	Bureaucrat	*bur_e = new Bureaucrat("F", 150);
 
 	// Grade to sign, but not to execute
 	pres_form->setSigned(false);
@@ -75,7 +84,7 @@ int	main(void)
 	delete bur;
 	delete bur_b;
 	delete bur_c;
-	// delete bur_d;
-	// delete bur_e;
+	delete bur_d;
+	delete bur_e;
 	return (0);
 }

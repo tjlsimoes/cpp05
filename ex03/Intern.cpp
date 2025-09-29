@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:50:46 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:50:47 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 11:12:38 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 Intern::Intern()
 {}
+
+Intern	&Intern::operator=(const Intern &other)
+{
+	(void)&other;
+	return (*this);
+}
+
+Intern::Intern(const Intern &other)
+{
+	(void)&other;
+}
 
 Intern::~Intern()
 {}
