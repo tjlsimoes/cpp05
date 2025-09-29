@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:51:49 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/29 11:02:03 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:52:52 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int	main(void)
 		std::cerr << e.what() << '\n';
 	}
 
-	Bureaucrat	*bur_c = new Bureaucrat("D", 145);
-	Bureaucrat	*bur_d = new Bureaucrat("E", 150);
-	Bureaucrat	*bur_e = new Bureaucrat("F", 150);
+	Bureaucrat	*bur_c = new Bureaucrat("C", 145);
+	Bureaucrat	*bur_d = new Bureaucrat("D", 150);
+	Bureaucrat	*bur_e = new Bureaucrat("E", 150);
 
 	// Grade to sign, but not to execute
 	pres_form->setSigned(false);

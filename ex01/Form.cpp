@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:52:24 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/29 10:26:55 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:46:02 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,10 @@ std::ostream	&operator<<(std::ostream & o, const Form & rhs)
 	<< ", signed: " << (rhs.getSigned() ? "true" : "false")
 	<< std::endl;
 	return (o);
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return ("Invalid grade to sign: too low");
 }
 

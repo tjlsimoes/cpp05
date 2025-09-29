@@ -6,7 +6,7 @@
 /*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:52:32 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/29 10:29:29 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:45:04 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,22 @@ void		Bureaucrat::signForm(Form &form) const
 	<< std::endl;
 }
 
-
 std::ostream	&operator<<(std::ostream & o, Bureaucrat const & rhs)
 {
 	o
 	<< rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << "."
 	<< std::endl;
 	return (o);
+}
+
+const char	*Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Invalid grade: too high");
+}
+
+const char	*Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Invalid grade: too low");
 }
 
 

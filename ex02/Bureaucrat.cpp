@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:51:56 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:51:56 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:48:04 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,14 @@ std::ostream	&operator<<(std::ostream & o, Bureaucrat const & rhs)
 	return (o);
 }
 
+const char	*Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Invalid grade: too high");
+}
+
+const char	*Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Invalid grade: too low");
+}
 
 

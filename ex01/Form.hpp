@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:52:22 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:52:22 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:46:06 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,7 @@ class Form
 		class	GradeTooLowException : public std::exception
 		{
 			public:
-				const char	*what() const throw()
-				{
-					return ("Invalid grade to sign: too low");
-				}
+				const char	*what() const throw();
 		};
 };
 

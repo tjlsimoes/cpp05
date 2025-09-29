@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:50:41 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:50:42 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:49:19 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,6 @@ void		Bureaucrat::executeForm(const AForm &form) const
 	<< std::endl;
 }
 
-
-
 std::ostream	&operator<<(std::ostream & o, Bureaucrat const & rhs)
 {
 	o
@@ -123,5 +121,13 @@ std::ostream	&operator<<(std::ostream & o, Bureaucrat const & rhs)
 	return (o);
 }
 
+const char	*Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Invalid grade: too high");
+}
 
+const char	*Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Invalid grade: too low");
+}
 

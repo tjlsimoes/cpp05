@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:52:28 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:52:30 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:45:11 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,12 @@ class	Bureaucrat
 		class GradeTooHighException : public std::exception 
 		{
 			public:
-				const char	*what() const throw()
-				{
-					return ("Invalid grade: too high");
-				}
+				const char	*what() const throw();
 		};
 		class GradeTooLowException : public std::exception 
 		{
 			public:
-				const char	*what() const throw()
-				{
-					return ("Invalid grade: too low");
-				}
+				const char	*what() const throw();
 		};
 
 		std::string	getName() const;

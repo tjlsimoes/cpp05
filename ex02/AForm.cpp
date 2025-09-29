@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:52:09 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:52:10 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:47:22 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,15 @@ std::ostream	&operator<<(std::ostream & o, const AForm & rhs)
 	<< ", signed: " << (rhs.getSigned() ? "true" : "false")
 	<< std::endl;
 	return (o);
+}
+
+const char	*AForm::GradeTooLowException::what() const throw()
+{
+	return ("Invalid grade: too low");
+}
+
+const char	*AForm::NotSignedException::what() const throw()
+{
+	return ("Form not signed");
 }
 
