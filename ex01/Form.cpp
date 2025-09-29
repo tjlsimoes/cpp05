@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:52:24 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:52:26 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 10:26:55 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ Form	&Form::operator=(const Form &other)
 {
 	if (this != &other)
 		_signed = other._signed;
-		// No more changes, really?
 	return (*this);
 }
 

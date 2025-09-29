@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjorge-l < tjorge-l@student.42lisboa.co    +#+  +:+       +#+        */
+/*   By: tjorge-l <tjorge-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 10:52:32 by tjorge-l          #+#    #+#             */
-/*   Updated: 2025/09/08 10:52:34 by tjorge-l         ###   ########.fr       */
+/*   Updated: 2025/09/29 10:29:29 by tjorge-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void		Bureaucrat::signForm(Form &form) const
 	{
 		std::cerr
 		<< _name << " couldn't sign form " << form.getName()
-		<< " because forms' grade to sign was " << form.getGrSign()
+		<< " because form's grade to sign was " << form.getGrSign()
 		<< " and bureaucrat's grade was " << _grade
 		<< std::endl;
 		return ;
